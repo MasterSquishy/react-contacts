@@ -30,7 +30,7 @@ function App() {
 
   return (
     <div>
-      <ListContacts contacts={contacts} onDelete={handleDelete} />
+      <ListContacts contacts={contacts} onDeleteContact={handleDelete} />
     </div>
   );
 }
