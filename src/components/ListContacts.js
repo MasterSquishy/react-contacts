@@ -11,7 +11,9 @@ const ListContacts = ({ contacts, onDeleteContact }) => {
   const showingContacts =
     query === ""
       ? contacts
-      : contacts.filter((c) => c.name.toLowerCase().includes(query));
+      : contacts.filter((c) =>
+          c.name.toLowerCase().includes(query.toLowerCase())
+        );
 
   return (
     <div className="list-contacts">
