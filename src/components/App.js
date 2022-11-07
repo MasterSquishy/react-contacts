@@ -24,9 +24,13 @@ function App() {
     },
   ]);
 
+  const handleDelete = (contact) => {
+    setContacts(contacts.filter((c) => c.id !== contact.id));
+  };
+
   return (
     <div>
-      <ListContacts contacts={contacts} />
+      <ListContacts contacts={contacts} onDelete={handleDelete} />
     </div>
   );
 }
