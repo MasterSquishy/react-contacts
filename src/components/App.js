@@ -15,7 +15,11 @@ function App() {
     getContacts();
   }, []);
 
-  const handleDelete = (contact) => {
+  const handleDelete = async (contact) => {
+    // Remove contact from the database
+    ContactsAPI.remove(contact);
+
+    // Remove contact from the UI
     setContacts(contacts.filter((c) => c.id !== contact.id));
   };
 
