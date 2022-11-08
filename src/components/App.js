@@ -1,10 +1,12 @@
 import "../css/App.css";
 import { useState, useEffect } from "react";
 import ListContacts from "./ListContacts";
+import CreateContact from "./CreateContact";
 import * as ContactsAPI from "../utils/ContactsAPI";
 
 function App() {
   const [contacts, setContacts] = useState([]);
+  const [screen, setScreen] = useState("list");
 
   useEffect(() => {
     // Get contacts list from API
@@ -25,7 +27,10 @@ function App() {
 
   return (
     <div>
-      <ListContacts contacts={contacts} onDeleteContact={handleDelete} />
+      {screen === "list" && (
+        <ListContacts contacts={contacts} onDeleteContact={handleDelete} />
+      )}
+      {screen === "create" && <CreateContact />}
     </div>
   );
 }

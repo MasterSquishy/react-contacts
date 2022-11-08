@@ -53,7 +53,6 @@ const ListContacts = ({ contacts, onDeleteContact }) => {
           </li>
         ))}
       </ol>
-      }
     </div>
   );
 };
